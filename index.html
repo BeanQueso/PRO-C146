@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene background = "color:grey">
+            <a-camera position = "0 4 6"></a-camera>
+
+            <a-assets>
+                <a-asset-item id = "robot-obj" src = "./robot/tinker.obj"></a-asset-item>
+                <a-asset-item id = "robot-mtl" src = "./robot/obj.mtl"></a-asset-item>
+            </a-assets>
+
+            <a-circle id="floor" position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true" color="gray"></a-circle>
+            
+            <a-entity obj-model = "obj:#robot-obj; mtl:#robot-mtl" position = "0 0 0" rotation = "270 270 90" scale = "0.1 0.1 0.1"></a-entity>
+            <a-entity>
+                <a-sphere color = "white" radius = "0.15" position = "1 5.8 1.37" animation = "property:position; from: 1 5.8 1.37; to: 0.7 5.8 1.37; dir: alternative; loop:true; dur:1000"></a-sphere>
+                <a-sphere color = "white" radius = "0.15" position = "-0.12 5.8 1.27" animation = "property:position; from: -0.12 5.8 1.27; to: -0.3 5.8 1.27; dir: alternative; loop:true; dur:1000"></a-sphere>
+            </a-entity>
+
+            <a-entity>
+                <a-box position = "0 7 0" width = "0.3" depth = "0.3" animation = "property:position; from: 0 7 0; to: 0.6 7 0; dir:alternative; loop:true; dur:1000"></a-box>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
